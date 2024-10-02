@@ -1,38 +1,119 @@
+/* Navigation Menu Styling */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center the menu */
+  margin: 20px 0; /* Add some margin for spacing */
+  gap: 20px; /* Space between menu items */
+}
+
+nav ul li {
+  display: inline-block; /* Allows for better control with submenus */
+  position: relative; /* Positioning context for submenus */
+  margin: 0; /* Use gap instead of margin-right */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #007bff; /* Ensure consistent text color */
+  padding: 8px 16px;
+  display: block; /* Makes the entire link clickable */
+  font-size: 16px; /* Ensure consistent font size */
+  transition: color 0.3s, background-color 0.3s; /* Smooth transition for hover effects */
+  border-radius: 4px; /* Smooth edges */
+  outline: none; /* Remove any default outlines */
+}
+
+/* Hover, focus, and active states for all menu items */
+nav ul li a:hover,
+nav ul li a:focus,
+nav ul li a:active {
+  text-decoration: underline;
+  background-color: #e7f0ff; /* Highlight effect on hover */
+  color: #0056b3; /* Darker blue for hover state */
+}
+
+/* Force consistent styling across all menu items, including "Settings" */
+nav ul li a,
+nav ul li a:link,
+nav ul li a:visited {
+  color: #007bff; /* Ensure consistent color for all link states */
+}
+
+/* Submenu Styling */
+.submenu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%; /* Align submenu below the parent */
+  left: 0; /* Align submenu to the left edge of the parent */
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  list-style-type: none;
+  padding: 10px 0;
+  margin: 0;
+  min-width: 150px;
+  z-index: 1000;
+  border-radius: 4px; /* Smooth edges */
+}
+
+/* Ensure submenu appears directly below the "Settings" item */
+.submenu li {
+  padding: 5px 10px;
+}
+
+.submenu li a {
+  color: #007bff;
+  text-decoration: none;
+  padding: 5px 10px;
+  display: block; /* Full-width clickable link */
+  transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+.submenu li a:hover {
+  background-color: #e7f0ff;
+}
+
+/* Display submenu on hover */
+nav ul li:hover .submenu {
+  display: block;
+}
+
+/* Heading Styling */
+h2, h3, h4 {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #333; /* Dark color for better readability */
+}
+
+h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* App Container Styling */
 .App {
   text-align: center;
+  padding: 10px; /* Add padding to ensure content is not too close to edges */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Button Styling */
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
   color: white;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition on hover */
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }

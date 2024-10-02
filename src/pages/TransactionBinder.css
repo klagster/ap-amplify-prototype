@@ -1,0 +1,167 @@
+/* Main Container */
+.transaction-binder-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+  width: 200px;
+  background-color: #f4f4f4;
+  border-right: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Main Section Split into Two Columns */
+.main-section {
+  display: flex;
+  gap: 20px;
+  overflow: auto; /* Add scroll if content overflows */
+}
+
+/* Left Column - Document Image */
+.left-column {
+  flex: 2;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #fff;
+  overflow: hidden; /* Ensure the content does not overflow */
+}
+
+.document-image {
+  display: flex;
+  justify-content: top;
+  align-items: center;
+  overflow: hidden;
+  height: 100%; /* Ensure full height usage */
+}
+
+.document-image canvas,
+.document-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensures content fits within the container */
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+/* Right Column - Transaction Details and Supplier Details */
+.right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Transaction Details Section */
+.transaction-details {
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+.transaction-table th,
+.transaction-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.transaction-table th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+.transaction-table tfoot td {
+  font-weight: bold;
+  background-color: #f4f4f4;
+  text-align: right;
+}
+
+/* Approve Button */
+.approve-btn {
+  padding: 6px 12px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.approve-btn:hover {
+  background-color: #218838;
+}
+
+/* Supplier Details Section */
+.supplier-details {
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+/* Footer Navigation */
+.footer-navigation {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cancel-btn,
+.previous-btn,
+.next-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+}
+
+.cancel-btn:hover,
+.previous-btn:hover,
+.next-btn:hover {
+  background-color: #0056b3;
+}
